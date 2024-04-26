@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* NAV BAR */
+        .breadcrumbs {
+    margin: 200px 0 0;
+    padding: 60px;
+    background: rgba(244, 254, 220, 0.6);
+    display: block;
+    box-shadow: 0 2px 16px #333;
+    li {
+      display: inline-block;
+      a {
+        position: relative;
+        font-size: 19px;
+        color: #333;
+        text-transform: uppercase;
+        padding-right: 20px;
+        margin-right: 10px;
+        text-decoration: none;
+        &:after {
+          content: "";
+          width: 9px;
+          height: 8px;
+          border-top:2px solid #555;
+          border-right:2px solid #555;
+          position:absolute;
+          top: 6px;
+          right: 0;
+          transform:rotate(45deg);
+          display: block;
+        }
+      }
+      &:last-of-type a {
+        color: black;
+        font-weight: bold;
+        &:after { display: none; }
+      }
+    }
+  }
+
+body { 
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/30256/landscape-tumblr-wallpaper-desktop-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+/* NAV BAR END */
+    </style>
+</head>
+<body>
+    <!-- NAV BAR -->
+    <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">About</a></li>  
+        <li><a href="">Team</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Inter:wght@100;200;300;400;500;531;600;700;800;900&family=Lobster&family=Montserrat:wght@1,500;600;700&family=Oxygen:wght@300;400;700&family=Raleway:ital,wght@0,100;0,500;1,400;1,500&family=Roboto:ital,wght@0,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+  <title>Agri Store</title>
+  <style>
+   body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+   
+  </style>
+</head>
+<body>
+    <header class="header">
+		<h1 class="logo"><a href="index.html">Agriculture</a></h1>
+      <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="factories.html">Factories</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+	</header>
+    <!-- <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img class="img-responsive" src="images/agrilogo.jpg" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+             <li class="nav-item">
+                <a class="nav-link" href="store.html">Store</a>
+              </li> -->
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="factories.html">Factories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="partners.html">Partners</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>        
+            </ul>
+          </div>  
+    
+        </div>
+       
+      </nav> -->
+ 
+
+    <div class="container">
+
+        
+    <div class="row carousel-row py-3">
+        <div class="col-md-12">
+          <h2 class="h2-responsive shadow py-3"> <b>Farming Crops</b></h2>
+          <div id="myCarousel" class="carousel store-carousel slide" data-ride="carousel" data-interval="0">
+          
+        <!-- chartttttttt -->
+
+        <div style="padding-left: 175px;">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+            
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            
+            <script>
+            var xValues = ["Winter","Summer","Monsoon" ];
+            var yValues = [33.33,33.33,33.33];
+            var barColors = [
+              "#2b5797",
+              "#b91d47",
+              "#00aba9",
+            ];
+            
+            new Chart("myChart", {
+              type: "doughnut",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: "Farming Crops based on Season [ Duration- 4 Month ]"
+                }
+              }
+            });
+            </script>
+        </div>
+         
+          
+      
+
+<!-- winteeeeeeeeeeer -->
+
+        <div class="col-md-12 store-items-col">
+            <h2 class="store-items-heading h2-responsive shadow py-2"><b>Winter</b></h2>
+           
+      
+                <div class="store-items">
+                  <div class="row store-row-2 py-3">
+
+                    <div class="col-sm-3">
+                      <div class="thumb-wrapper">
+                          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                          <div class="img-box">
+                              <img src="images/wheat.png" class="img-responsive img-fluid" alt="">									
+                          </div>
+                          <div class="thumb-content">
+                              <h4 class="h4-responsive">Wheat</h4>									
+                              <div class="star-rating">
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                  </ul>
+                              </div>
+                          </div>						
+                      </div>                      
+          </div>
+         
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                    <div class="img-box">
+                        <img src="images/cotton.jpg" class="img-responsive img-fluid" alt="">									
+                    </div>
+                    <div class="thumb-content">
+                        <h4 class="h4-responsive">Cotton</h4>									
+                        <div class="star-rating">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                        
+                    </div>						
+                </div>                     
+            </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/potato.png" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Potato</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>              
+    </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/mustard.jpg" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Mustard</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>            
+    </div>
+    </div>
+<!-- 2nd row -->
+    <div class="store-items">
+        <div class="row store-row-2 py-3">
+
+          <div class="col-sm-3">
+            <div class="thumb-wrapper">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <div class="img-box">
+                    <img src="images/chickpea.jpg" class="img-responsive img-fluid" alt="">									
+                </div>
+                <div class="thumb-content">
+                    <h4 class="h4-responsive">Chickpea</h4>									
+                    <div class="star-rating">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>						
+            </div>                      
+</div>
+
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/sunflower.png" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Sunflower </h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+              
+          </div>						
+      </div>                     
+  </div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+    <img src="images/Onions.png" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+    <h4 class="h4-responsive">Onion</h4>									
+    <div class="star-rating">
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+        </ul>
+    </div>
+</div>						
+</div>              
+</div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+    <img src="images/Pea.jpg" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+    <h4 class="h4-responsive">Pea</h4>									
+    <div class="star-rating">
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+        </ul>
+    </div>
+</div>						
+</div>            
+</div>
+</div>   
+
+<!-- 3rd row -->
+<div class="store-items">
+    <div class="row store-row-2 py-3">
+
+      <div class="col-sm-3">
+        <div class="thumb-wrapper">
+            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+            <div class="img-box">
+                <img src="images/Carrots.jpg" class="img-responsive img-fluid" alt="">									
+            </div>
+            <div class="thumb-content">
+                <h4 class="h4-responsive">Carrot</h4>									
+                <div class="star-rating">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+            </div>						
+        </div>                      
+</div>
+
+
+<div class="col-sm-3">
+  <div class="thumb-wrapper">
+      <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+      <div class="img-box">
+          <img src="images/Cabbagee.jpg" class="img-responsive img-fluid" alt="">									
+      </div>
+      <div class="thumb-content">
+          <h4 class="h4-responsive">Cabbage</h4>									
+          <div class="star-rating">
+              <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                  <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+              </ul>
+          </div>
+          
+      </div>						
+  </div>                     
+</div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+<img src="images/Leek.jpg" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+<h4 class="h4-responsive">Leek</h4>									
+<div class="star-rating">
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+    </ul>
+</div>
+</div>						
+</div>              
+</div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+<img src="images/beett.jpg" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+<h4 class="h4-responsive">beet</h4>									
+<div class="star-rating">
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+    </ul>
+</div>
+</div>						
+</div>            
+</div>
+</div>
+      
+                 <!-- Summerrrrrrrrrrrrrr -->
+                  <h2 class="store-items-heading h2-responsive shadow py-2"><b>Summer</b></h2>
+                 
+                  <div class="row store-row-3 py-3">
+
+                    <div class="col-sm-3">
+                      <div class="thumb-wrapper">
+                          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                          <div class="img-box">
+                              <img src="images/pumkin.jpg" class="img-responsive img-fluid" alt="">									
+                          </div>
+                          <div class="thumb-content">
+                              <h4 class="h4-responsive">Pumpkin</h4>									
+                              <div class="star-rating">
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                  </ul>
+                              </div>
+                          </div>						
+                      </div>                      
+          </div>
+         
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                    <div class="img-box">
+                        <img src="images/cucumber.png" class="img-responsive img-fluid" alt="">									
+                    </div>
+                    <div class="thumb-content">
+                        <h4 class="h4-responsive">Cucumber</h4>									
+                        <div class="star-rating">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                    </div>						
+                </div>                     
+    </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/rice.jpg" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Rice</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>              
+    </div>
+    
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/corn.webp" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Corn</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>            
+    </div>
+</div>
+<!-- 2nd row summer -->
+    <div class="store-items">
+                  <div class="row store-row-2 py-3">
+
+                    <div class="col-sm-3">
+                      <div class="thumb-wrapper">
+                          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                          <div class="img-box">
+                              <img src="images/Brinjal.jpg" class="img-responsive img-fluid" alt="">									
+                          </div>
+                          <div class="thumb-content">
+                              <h4 class="h4-responsive">Brinjal</h4>									
+                              <div class="star-rating">
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                  </ul>
+                              </div>
+                          </div>						
+                      </div>                      
+          </div>
+         
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                    <div class="img-box">
+                        <img src="images/Soybean.jpg" class="img-responsive img-fluid" alt="">									
+                    </div>
+                    <div class="thumb-content">
+                        <h4 class="h4-responsive">Soybean</h4>									
+                        <div class="star-rating">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                        
+                    </div>						
+                </div>                     
+            </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/Watermelon.jpg" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">watermelon</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>              
+    </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/zucchini.png" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Zucchini</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>            
+    </div>
+    </div>
+
+    <!-- 3rd row summer -->
+    <div class="store-items">
+                  <div class="row store-row-2 py-3">
+
+                    <div class="col-sm-3">
+                      <div class="thumb-wrapper">
+                          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                          <div class="img-box">
+                              <img src="images/Blueberries.png" class="img-responsive img-fluid" alt="">									
+                          </div>
+                          <div class="thumb-content">
+                              <h4 class="h4-responsive">Blueberries</h4>									
+                              <div class="star-rating">
+                                  <ul class="list-inline">
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                  </ul>
+                              </div>
+                          </div>						
+                      </div>                      
+          </div>
+         
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                    <div class="img-box">
+                        <img src="images/Radish.jpg" class="img-responsive img-fluid" alt="">									
+                    </div>
+                    <div class="thumb-content">
+                        <h4 class="h4-responsive">Radish</h4>									
+                        <div class="star-rating">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                            </ul>
+                        </div>
+                        
+                    </div>						
+                </div>                     
+            </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/Turnips.png" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Turnips</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>              
+    </div>
+   
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/Green beans.jpg" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Green beans</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+          </div>						
+      </div>            
+    </div>
+    </div>
+
+
+            <!-- Mooooonsoooooooooon -->
+                  <h2 class="store-items-heading h2-responsive shadow py-2"><b>Monsoon</b></h2>
+
+                    <div class="row store-row-3 py-3">
+  
+                      <div class="col-sm-3">
+                        <div class="thumb-wrapper">
+                            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                            <div class="img-box">
+                                <img src="images/cotton.jpg" class="img-responsive img-fluid" alt="">									
+                            </div>
+                            <div class="thumb-content">
+                                <h4 class="h4-responsive">cotton</h4>									
+                                <div class="star-rating">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    </ul>
+                                </div>
+                            </div>						
+                        </div>                      
+            </div>
+  
+                <div class="col-sm-3">
+                  <div class="thumb-wrapper">
+                      <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                      <div class="img-box">
+                          <img src="images/sugarcane.jpg" class="img-responsive img-fluid" alt="">									
+                      </div>
+                      <div class="thumb-content">
+                          <h4 class="h4-responsive">Sugarcane</h4>									
+                          <div class="star-rating">
+                              <ul class="list-inline">
+                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                  <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                  <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                              </ul>
+                          </div>
+                      </div>						
+                  </div>                     
+      </div>
+  
+      <div class="col-sm-3">
+        <div class="thumb-wrapper">
+            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+            <div class="img-box">
+                <img src="images/tea.png" class="img-responsive img-fluid" alt="">									
+            </div>
+            <div class="thumb-content">
+                <h4 class="h4-responsive">Tea</h4>									
+                <div class="star-rating">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+            </div>						
+        </div>              
+      </div>
+  
+      <div class="col-sm-3">
+        <div class="thumb-wrapper">
+            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+            <div class="img-box">
+                <img src="images/pulses.jpg" class="img-responsive img-fluid" alt="">									
+            </div>
+            <div class="thumb-content">
+                <h4 class="h4-responsive">Pulses</h4>									
+                <div class="star-rating">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                    </ul>
+                </div>
+            </div>						
+        </div>            
+      </div>
+    </div>
+               
+<!-- 2nd row -->
+
+    <div class="store-items">
+        <div class="row store-row-2 py-3">
+
+          <div class="col-sm-3">
+            <div class="thumb-wrapper">
+                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                <div class="img-box">
+                    <img src="images/Chili.png" class="img-responsive img-fluid" alt="">									
+                </div>
+                <div class="thumb-content">
+                    <h4 class="h4-responsive">Chili</h4>									
+                    <div class="star-rating">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                        </ul>
+                    </div>
+                </div>						
+            </div>                      
+</div>
+
+
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
+          <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+          <div class="img-box">
+              <img src="images/Litchi.jpg" class="img-responsive img-fluid" alt="">									
+          </div>
+          <div class="thumb-content">
+              <h4 class="h4-responsive">Litchi</h4>									
+              <div class="star-rating">
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                  </ul>
+              </div>
+              
+          </div>						
+      </div>                     
+  </div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+    <img src="images/Groundnut.png" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+    <h4 class="h4-responsive">Groundnut</h4>									
+    <div class="star-rating">
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+        </ul>
+    </div>
+</div>						
+</div>              
+</div>
+
+
+<div class="col-sm-3">
+<div class="thumb-wrapper">
+<span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+<div class="img-box">
+    <img src="images/Bananas.jpg" class="img-responsive img-fluid" alt="">									
+</div>
+<div class="thumb-content">
+    <h4 class="h4-responsive">Bananas</h4>									
+    <div class="star-rating">
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+        </ul>
+    </div>
+</div>						
+</div>            
+</div>
+</div>
+
+                    </div>
+                </div>
+                </div>    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

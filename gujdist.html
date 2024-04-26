@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Blur Effect</title>
+<style>
+/* navvvvvvvvvvvvvvvvvvvvvvvvvvv */
+
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
+
+
+
+
+/* navenddddddddddddddd */
+
+
+
+
+    .image-container {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        height: 200px;
+        width: 190px;
+        padding: 53px;
+    }
+
+    .image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: filter 0.3s ease;
+    }
+
+    .image-container:hover img {
+        filter: blur(8px); /* Adjust the blur amount as needed */
+    }
+
+    .image-container .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .image-container .overlay-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+    <header class="header">
+		<h1 class="logo"><a href="index.html">Agriculture</a></h1>
+      <ul class="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="factories.html">Factories</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+	</header>
+
+
+
+
+
+
+<!-- Repeat this div for each image -->
+<div class="image-container">
+    <img src="images/ahm.png" alt="Image 1" style="height: 150px; width: 180px;">
+    <h1 style="text-align: center;">Ahmedabad</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <!-- Additional content or text overlay if needed -->
+            <p style="font-size: 12px;">Ahmedabad also grows fruits like lemons, Bananas, Papayas, Chickpeas, Mangoes, Coconuts, Guavas, Green Berries, Dates, Pomegranates, Custard Apples, and Aonla (Amla). Apart from Lemons, Papaya and Green Berry are two other fruits that produce more than 6000 metric tons. Some important crops are Wheat, Cotton, Barley, Peas, Gram, and Mustard</p> 
+        </div>
+    </div>
+</div>
+<!-- End of image div -->
+
+<!-- Repeat this div for each image (change src attribute accordingly) -->
+<!-- Repeat this div for each image -->
+<div class="image-container">
+    <img src="images/amreli.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Amreli</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+           <p style="font-size: 12px;"> Amreli is an agricultural district in which Cotton and Groundnut are the major crops. Other major crops grown are Wheat, Sesame, Bajra, Jowar, etc. About 57% of the land is owned by small and backward farmers and the average holding size is 2.36 hectares. Horticultural crops can be encouraged in the district as an alternative to traditional farming methods.</p> 
+        </div>
+    </div>
+</div>
+<!-- End of image div -->
+
+<!-- Repeat for all 33 images -->
+<div class="image-container">
+    <img src="images/anand.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Anand</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Anand is an agricultural district in which Tobacco and Paddy are the predominant crops.Other major crops grown are Wheat,Banana,and vegetables.Mango, Lemon, and Papaya are the major plantings and horticultural crops grown in the district.Cultivation of medicinal and aromatic crops is on the rise in the district.There is a huge potential for the fruit processing industry.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/arvalli.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Aravalli</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Aravalli is an agricultural district in which Cotton and Wheat are the major crops. Other important crops grown are Oilseeds, Maize, Potatoes, etc. The number of small and marginal farmers in the district is 67414 which is 66% of the total farmer population. Major field crops are Cotton, Maize, Peanut, Wheat, Castor, Pigeon Pea, Chickpea, Soybean, Black gram.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/banaskatha.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Banaskantha</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Banaskantha is mainly an agricultural district in which Bajra and Potato are the major crops. Other important crops grown are Mustard, Castor, Cumin, Sesame, etc. About 52% of the land is owned by small and backward farmers and the average holding size is 2.67 hectares. To increase agricultural productivity, it is necessary to adopt modern technology for restoration of soil health, mechanization, and cultivation of suitable profitable crops, effective management of pests and diseases. Horticultural crops can be encouraged in the district as an alternative to traditional farming methods. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/bharuch.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Bharuch</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Bharuch is an agricultural district and the major crops are Cotton, Tur. Other important crops grown are sugarcane, Wheat, Banana, Pulses, etc. About 77% of the land is owned by small and backward farmers and the average holding size is 2.47 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/bhavnagar.jpeg" alt="Image 2">
+    <h1 style="text-align: center;">Bhavnagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Bhavnagar is an agricultural district. The predominant crops are Cotton, Groundnut. Other important crops that are cultivated are Bajra, Sesame, Jowar, Onion, etc. About 60% of the land is owned by small and backward farmers and the average size of the holdings is 2.40 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/botad.png" alt="Image 2">
+    <h1 style="text-align: center;">Botad</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Botad is an agricultural district in which cotton and groundnut are the major crops. The other major crops grown are Millet, Wheat, Sesame, and Pulses. About 47% is landholders are small and medium farmers and the average size of holdings is 2.88 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/chhota udepur.svg" alt="Image 2">
+    <h1 style="text-align: center; font-size: 25px;">Chhota Udepur</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">The major crops grown in the Chhota Udepur district are Cotton, Maize, Sugarcane, Sorghum, and Paddy. Banana, Mango, Guava and Sapota are important horticultural crops. Vegetables are grown extensively in Pavi Jetpur, Chhotaudepur & Naswadi blocks of the district. It is a tribal majority (89.4%) district based on 100% agriculture. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Dahod.svg" alt="Image 2">
+    <h1 style="text-align: center;">Dahod</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 13px;">Dahod is primarily an agricultural region and accounts for the largest share of the district’s revenue. Wheat and Maize are the main crops of the district from agricultural products. Dahod is an agricultural district in which maize and wheat are the major crops. Other important crops grown are Paddy, Tur, Soybean, Urad, Groundnut, etc. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Dang.svg" alt="Image 2">
+    <h1 style="text-align: center;">Dang</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Dang is an agricultural district in which Paddy, Nagali, Gram, and horticulture crops are important. Other important crops grown are Peanuts, Sugarcane, Spices, Strawberries, other Millets, etc. The total area is 57843 hectares which includes 11197 farmers. About 94% of the land is owned by large farmers and the average holding size is 6.6 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Devbhumi Dwarka.png" alt="Image 2">
+    <h1 style="text-align: center;font-size: 25px;">Devbhoomi Dwarka</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 10px;">Devbhoomi Dwarka is an agricultural district in which Ground Nut is the main crop. Other important crops grown are Cotton, Cumin, Gram, Coriander, Wheat, Sesame, Garlic, and Onion. About 48% of the land is owned by small and backward farmers and the average holding size is 2.76 hectares. Horticultural crops can be encouraged in the district as an alternative to traditional farming methods. The Horticulture Department can provide awareness, training, and extension to stakeholders for the production and validation of organic farming.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Gandhinagar.png" alt="Image 2">
+    <h1 style="text-align: center;">Gandhinagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Gandhinagar is an agricultural district. The predominant crops are Wheat and Cotton crop. Other important crops grown are Castor, Millet, Pulses, Vegetables, Fennel, etc. About 78% of the land is owned by small and backward farmers and the average holding size is 1.43 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Gir Somnath.svg" alt="Image 2">
+    <h1 style="text-align: center;font-size: 25px;">Gir Somnath</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Cotton, Groundnut, and Sugarcane are important crops in Gir Somnath. Other important crops grown are Wheat, Sesame, Bajra, Jowar. About 71% of the land is owned by small and backward farmers and the average size of holdings is 2.0 hectares. Horticultural crops can be encouraged in the district as an alternative to traditional farming methods.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Jamnagar.png" alt="Image 2">
+    <h1 style="text-align: center;">Jamnagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Ground Nut and Cotton are the major crops and this is primarily an agricultural district. Cumin, Gram, Coriander, Wheat, Sesame, Garlic, and Onion are other important crops grown. About 53% of the land is owned by small and marginal farmers and the average holding size is 2.5 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Junagadh.png" alt="Image 2">
+    <h1 style="text-align: center;">Junagadh</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 11px;">Modern technology needs to be adopted to restore soil health, increase mechanization and cultivate suitable profitable crops. Effective pest and disease management is essential to increase agricultural productivity. Modern farming methods such as proper cultivation for vegetables, drip irrigation for cotton, sprinkler irrigation for peanuts need to be adopted to increase production and productivity.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Kutch.png" alt="Image 2">
+    <h1 style="text-align: center;">Kachchh</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">The major crops are Cotton, Peanut, Castor, Pearl Millet, Cluster Bean, and Sesame in Khar (important crops grown in this area in Rabi are Peanuts, Cumin, Wheat, Mustard, and Coriander). Horticultural crops are grown in approximately 18500 Ha in Kachchh District.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Kheda.png" alt="Image 2">
+    <h1 style="text-align: center;font-size: 25px;">kheda-nadiad</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 11px;">Tobacco and Paddy are the major crops. The other major crops grown are Wheat, Millet, Maize, Cotton, and Groundnut. About 21.39% of the land is owned by small and marginal farmers and the average size of holdings is 1.20 hectares. Due to adequate and good quality groundwater and its proximity to major centers like Ahmedabad and Vadodara, horticulture is a dominant sector in agriculture.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Mahisagar.png" alt="Image 2">
+    <h1 style="text-align: center;">Mahisagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Mahisagar district is an important district in the North Central region of Gujarat. Mahisagar is an agricultural district in which paddy and maize are the major crops. Other crops grown are Wheat, Pulses, Peanuts, Tobacco, etc. About 70% of the land is owned by small and backward farmers and the average size of holdings is 2 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Mehsana.png" alt="Image 2">
+    <h1 style="text-align: center;">Mehsana</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 15px;">Mehsana is an agricultural district in which Wheat, Millet, Mustard, Cumin, and Sesame are the major crops. Other important crops grown are Fennel, Peanut, Eggplant, Potato, Tomato, Okra, Mango, Lemon, Sapota, etc.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Morbi.svg" alt="Image 2">
+    <h1 style="text-align: center;">Morbi</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 16px;">It is an agricultural district and Cotton, Cumin, and Wheat are the major crops. Other important crops grown are Millet, Wheat, Sesame, Peanut, etc. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Narmada.png" alt="Image 2">
+    <h1 style="text-align: center;">Narmada</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Narmada is an agricultural district in which Cotton and Tuvar are the major crops. Other important crops that are cultivated are Sugarcane, Wheat, Banana, Pulses, etc. About 58.20% of the land is owned by small and backward farmers and the average size of holdings is 2.50 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Navsari.svg" alt="Image 2">
+    <h1 style="text-align: center;">Navsari</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 15px;">Sugarcane, Paddy, and horticulture are important crops in this district. Other important crops grown are Jowar, Tur, Groundnut, etc. About 47% of the land is owned by small and backward farmers and the average holding size is 0.55 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Panchmahal.png" alt="Image 2">
+    <h1 style="text-align: center;font-size: 25px;">panchmahal-godhra</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Panchmahal is an important district in the Central Gujarat region. Panchmahal is an agricultural district in which Paddy and Maize are the major crops. Other crops grown are Wheat, Pulses, Peanuts, Tobacco, etc. About 70% of the land is owned by small and backward farmers and the average size of holdings is 2 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Patan.png" alt="Image 2">
+    <h1 style="text-align: center;">Patan</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 15px;">The major crops grown in Patan are Castor and Bt. Cotton. Other major crops grown are Desi Cotton, Fodder Millet, Wheat Mustard, Cumin, Fennel, Pulses, etc. About 53% of the land is occupied by small and backward farmers and the average holding size is 2.68 hectares.</p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Porbandar.png" alt="Image 2">
+    <h1 style="text-align: center;">Porbandar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 12px;">Porbandar is an agricultural district in which Peanuts and Cotton are the major crops. Other important crops grown are Wheat, Cumin, and Sesame. About 60% of the land is owned by small and backward farmers and the average holding size is 2.35 hectares. The major crops of the district are Peanut, Cotton, Millet, Gram, Wheat, Sesame, and Jowar. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Rajkot.png" alt="Image 2">
+    <h1 style="text-align: center;">Rajkot</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Rajkot is an agricultural district in which Peanuts and Cotton are the major crops. Other important crops grown are Wheat, Cumin, Gram, Onion, and Chilli. About 57% of the land is owned by small and backward farmers and the average holding size is 2.29 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Sabarkantha.png" alt="Image 2">
+    <h1 style="text-align: center;font-size: 25px;">Sabarkantha-himmatnagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 13px;">Sabarkantha is an agricultural district in which Cotton and Wheat are the major crops. Other important crops grown are Oilseeds, Maize, Potatoes, etc. The number of small and marginal farmers in the district is 91485 which is 71% of the total farmer population. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Surat.png" alt="Image 2">
+    <h1 style="text-align: center;">Surat</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Surat is an agricultural district with major crops of Sugarcane and other major crops grown are Jowar, Wheat, Peanuts, Bananas, Vegetables, etc. About 65% of the land is owned by small and backward farmers and the average holding size is 2.02 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Surendranagar.png" alt="Image 2">
+    <h1 style="text-align: center;">Surendranagar</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Surendranagar district is an agricultural district and Cotton and Cumin are the major crops. Other important crops grown are Millet, Wheat, Sesame, Peanut, etc. About 37% of the land is owned by small and backward farmers and the average holding size is 1.22 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Tapi.png" alt="Image 2">
+    <h1 style="text-align: center;">Tapi</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 14px;">Tapi is primarily an agricultural district with major crops of Paddy and Sugarcane. Other important crops grown are Millet, Wheat, Peanuts, Cotton, Vegetables, etc. About 65% of the land is owned by small and backward farmers and the average holding size is 0.84 hectares. </p>
+        </div>
+    </div>
+</div>
+
+<div class="image-container">
+    <img src="images/Vadodara.svg" alt="Image 2">
+    <h1 style="text-align: center;">Vadodara</h1>
+    <div class="overlay">
+        <div class="overlay-content">
+            <p style="font-size: 15px;">The major horticultural crops in the Vadodara district are vegetables (27581 ha), fruits (21447 ha), and spices (mainly pepper). There are also medicinal crops, which are grown on an area of ​​90 hectares. </p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
